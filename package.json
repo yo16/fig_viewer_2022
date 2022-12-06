@@ -2,19 +2,25 @@
   "name": "fig_viewer",
   "version": "1.0.0",
   "description": "A viewer for almost HPGL file.",
-  "main": "index.js",
+  "main": "lib/fig-viewer.js",
   "scripts": {
     "dev": "webpack --mode development --config webpack.dev.config",
     "build": "webpack --mode production --config webpack.prod.config"
   },
   "repository": {
     "type": "git",
-    "url": "git@home.github.com:yo16/fig_viewer_2022.git"
+    "url": "git+https://github.com/yo16/fig_viewer_2022.git"
   },
   "author": "yo16",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "babel-loader": "^9.1.0"
   }
 }
