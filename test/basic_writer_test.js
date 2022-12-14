@@ -7,9 +7,10 @@ if (require.main === module){
 
 async function ynf_element_base_main(){
     try{
+        console.log('YnfElementBase test -----')
+
         const tests = [
             test1,
-            alwaysFailTest,
         ]
 
         for (const test of tests){
@@ -34,8 +35,7 @@ async function test1(){
     assert.strictEqual(actual, expected)
 }
 
-async function alwaysFailTest() {
-    assert.fail('alwaysFail')
-}
 
+
+// export
 module.exports = ynf_element_base_main;
