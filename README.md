@@ -18,6 +18,20 @@ A viewer for almost HPGL file for now.
   - Node.jsでクラスを使うときの説明。
   - エクスポートとインポート。
 
+- [【Node.js】定義したクラスを別のファイルで使用する - Qiita](https://qiita.com/OsakaKaiyukan/items/1a72520dd1b55c619b24)
+  - 参照される側で
+    ```
+    module.export = クラス名
+    ```
+  - 使用する側で
+    ```
+    const クラス名 = require('./パス')
+    ```
+
+
+- [Assert | Node.js v19.3.0 Documentation](https://nodejs.org/api/assert.html)
+  - Assertの公式ドキュメント
+
 
 ## テスト方法
 - [Node.jsで標準ライブラリだけを使って単体テストを行う方法【動画版あり】](https://zenn.dev/tatsuyasusukida/articles/nodejs-test-unit)

@@ -1,5 +1,5 @@
 const assert = require('assert')
-const YnfElementBase = require('../src/components/core/elements/ynf_element_base')
+const YnfElementBase = require('../../src/components/core/elements/ynf_element_base')
 
 if (require.main === module){
     ynf_element_base_main()
@@ -7,10 +7,8 @@ if (require.main === module){
 
 async function ynf_element_base_main(){
     try{
-        console.log('YnfElementBase test -----')
-
         const tests = [
-            test1,
+            elm_base_test1,
         ]
 
         for (const test of tests){
@@ -27,7 +25,7 @@ async function ynf_element_base_main(){
     }
 }
 
-async function test1(){
+async function elm_base_test1(){
     let eb = new YnfElementBase()
     const actual = eb.to_string()
     const expected = 'YnfElementBase'
