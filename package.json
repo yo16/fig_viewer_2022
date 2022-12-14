@@ -5,7 +5,8 @@
   "main": "lib/fig-viewer.js",
   "scripts": {
     "dev": "webpack --mode development --config webpack.dev.config",
-    "build": "webpack --mode production --config webpack.prod.config"
+    "build": "webpack --mode production --config webpack.prod.config",
+    "test": "webpack --mode development --config webpack.dev.config"
   },
   "repository": {
     "type": "git",
