@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development --config webpack.dev.config",
     "build": "webpack --mode production --config webpack.prod.config",
-    "test": "webpack --mode development --config webpack.dev.config"
+    "test": "node ./test/all_tests.js"
   },
   "repository": {
     "type": "git",
