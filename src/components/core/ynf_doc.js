@@ -18,6 +18,13 @@ class YnfDoc{
         }
         return ret;
     };
+
+    // to_json
+    to_json(options){
+        return {
+            elements: [...this.elements_stack],
+        }
+    }
 };
 
 export { YnfDoc };
