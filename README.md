@@ -21,12 +21,15 @@ A viewer for almost HPGL file for now.
 - [【Node.js】定義したクラスを別のファイルで使用する - Qiita](https://qiita.com/OsakaKaiyukan/items/1a72520dd1b55c619b24)
   - 参照される側で
     ```
-    module.export = クラス名
+    module.exports = クラス名
     ```
   - 使用する側で
     ```
     const クラス名 = require('./パス')
     ```
+
+- [Node.js – exportsとmodule.exportsで関数を公開する – KeruuWeb](https://keruuweb.com/node-js-exports%E3%81%A8module-exports%E3%81%A7%E9%96%A2%E6%95%B0%E3%82%92%E5%85%AC%E9%96%8B%E3%81%99%E3%82%8B/)
+  - exports、module.exportsの話
 
 
 - [Assert | Node.js v19.3.0 Documentation](https://nodejs.org/api/assert.html)
