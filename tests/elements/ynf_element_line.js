@@ -9,10 +9,10 @@ if (require.main === module){
 async function ynf_element_line_main(){
     try{
         const tests = [
-            no_options1,
-            no_options2,
-            no_options3,
-            no_options4,
+            elm_line_no_options1,
+            elm_line_no_options2,
+            elm_line_no_options3,
+            elm_line_no_options4,
             elm_line_test1,
             elm_line_test2,
         ]
@@ -32,7 +32,7 @@ async function ynf_element_line_main(){
 }
 
 // p1もp2も指定されていない
-async function no_options1(){
+async function elm_line_no_options1(){
     let status = 0;
     try {
         let el = new YnfElementLine()
@@ -45,7 +45,7 @@ async function no_options1(){
 }
 
 // p1だけ指定されているパターン
-async function no_options2(){
+async function elm_line_no_options2(){
     let status = 0;
     try {
         let opts = {'p1': [1,2]}
@@ -59,7 +59,7 @@ async function no_options2(){
 }
 
 // p2だけ指定されているパターン
-async function no_options3(){
+async function elm_line_no_options3(){
     let status = 0;
     try {
         let opts = {'p2': [1,2]}
@@ -73,7 +73,7 @@ async function no_options3(){
 }
 
 // p1もp2も指定されている
-async function no_options4(){
+async function elm_line_no_options4(){
     let status = 0;
     try {
         let opts = {'p1': [1,2], 'p2': [3,4]}
