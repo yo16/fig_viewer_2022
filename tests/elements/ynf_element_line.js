@@ -1,5 +1,6 @@
 const assert = require('assert')
 const YnfElementLine = require('../../src/components/core/elements/ynf_element_line')
+const same_objects = require('../test_common')
 
 if (require.main === module){
     ynf_element_line_main()
@@ -12,6 +13,7 @@ async function ynf_element_line_main(){
             no_options2,
             no_options3,
             no_options4,
+            elm_line_test1,
         ]
 
         for (const test of tests){
@@ -84,6 +86,19 @@ async function no_options4(){
     assert.ok(1-status)
 }
 
+
+async function elm_line_test1(){
+    let opts = {'p1': [1,2], 'p2': [3,4]}
+    let eb = new YnfElementLine(opts)
+    const actual = eb.to_json()
+    const expected = {
+        name:'YnfElementLine',
+        p1: [1,2],
+        p2: [3,4],
+    }
+
+    assert.ok(same_objects(actual, expected))
+}
 
 
 // export
