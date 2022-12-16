@@ -14,6 +14,7 @@ async function ynf_element_line_main(){
             no_options3,
             no_options4,
             elm_line_test1,
+            elm_line_test2,
         ]
 
         for (const test of tests){
@@ -86,15 +87,33 @@ async function no_options4(){
     assert.ok(1-status)
 }
 
-
+// 普通のコンストラクタ
 async function elm_line_test1(){
-    let opts = {'p1': [1,2], 'p2': [3,4]}
+    let opts = {p1: [1,2], p2: [3,4]}
     let eb = new YnfElementLine(opts)
     const actual = eb.to_json()
     const expected = {
         name:'YnfElementLine',
         p1: [1,2],
         p2: [3,4],
+    }
+
+    assert.ok(same_objects(actual, expected))
+}
+
+
+// オプションも入れる
+// 未知のオプションを入れても無視する
+async function elm_line_test2(){
+    let opts = {p1: [1,2], p2: [3,4], 'border-color': '#123', 'border-width': 10, 'noize': 'zzz'}
+    let eb = new YnfElementLine(opts)
+    const actual = eb.to_json()
+    const expected = {
+        name:'YnfElementLine',
+        p1: [1,2],
+        p2: [3,4],
+        'border-color': '#123',
+        'border-width': 10,
     }
 
     assert.ok(same_objects(actual, expected))
