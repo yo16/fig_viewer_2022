@@ -2,7 +2,7 @@
 */
 
 module.exports = {
-    BP: require('./one_command_BP'),
-    IN: require('./one_command_IN'),
-    PS: require('./one_command_PS'),
+    BP: require('./command_BP'),
+    IN: require('./command_IN'),
+    PS: require('./command_PS'),
 }

@@ -1,8 +1,8 @@
 /* HPGL2 reader
 */
 const BasicReader = require('./basic_reader')
-const core = require('../core');
-const hpgl2_one_command_parser = require('./hpgl2_reader_components/hpgl2_one_command_parser')
+const core = require('../core')
+const hpgl2_reader_cmp = require('./hpgl2_reader_components')
 
 /* HPGL2読み込みクラス
 
@@ -52,7 +52,7 @@ class Hpgl2Reader extends BasicReader {
         // １コマンドごとに解釈して、docを作成する
         while ( hpgl2_param.current_cursor < hpgl2_text.length ) {
             // コマンドを解釈
-            let ret = hpgl2_one_command_parser( hpgl2_param );
+            let ret = hpgl2_reader_cmp.Hpgl2CommandParser( hpgl2_param );
 
             // Docに追加
             ret.added_elements.forEach( elm => {

@@ -2,10 +2,10 @@
 /* HPGL2コマンド PS, Plot Size
 */
 
-const OneCommandBase = require('./one_command_base')
+const CommandBase = require('./command_base')
 const const_value = require('./const')
 
-class OneCommandPS extends OneCommandBase{
+class CommandPS extends CommandBase{
     constructor(options){
         super(options)
     }
@@ -27,4 +27,4 @@ class OneCommandPS extends OneCommandBase{
     }
 }
 
-module.exports = OneCommandPS
+module.exports = CommandPS

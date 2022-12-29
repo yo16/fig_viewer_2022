@@ -2,7 +2,7 @@
 /* １コマンドの基礎クラス
 */
 
-class OneCommandBase {
+class CommandBase {
     // コマンド実行前の、HPGL2のオプション
     initial_hpgl2_option = null
     // コマンドパラメータ
@@ -19,4 +19,4 @@ class OneCommandBase {
     parse_options(options) {}
 }
 
-module.exports = OneCommandBase
+module.exports = CommandBase

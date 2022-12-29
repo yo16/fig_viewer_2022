@@ -2,10 +2,10 @@
 /* HPGL2コマンド BP, Begin Plot
 */
 require('date-utils')
-const OneCommandBase = require('./one_command_base')
+const CommandBase = require('./command_base')
 const const_value = require('./const')
 
-class OneCommandBP extends OneCommandBase {
+class CommandBP extends CommandBase {
     constructor(options){
         super(options)
     }
@@ -26,7 +26,7 @@ class OneCommandBP extends OneCommandBase {
         // kind,value,kind,value...
         let pair_ary = this.command_param.split(',')
         if (pair_ary.length%2!=0) {
-            const msg = 'ERROR: OneCommandBP: kind,valueがセットになっていない'
+            const msg = 'ERROR: CommandBP: kind,valueがセットになっていない'
             console.error(msg)
             throw Error(msg);
         }
@@ -35,7 +35,7 @@ class OneCommandBP extends OneCommandBase {
         for (let i=0; i<pair_ary.length%2; i++) {
             const kind = pair_ary[i*2]
             const value = pair_ary[i*2+1]
-            console.assert([1,2,3,4,5].find(e => e===kind), `ERROR: OneCommandBP: kindが不正:${kind}`)
+            console.assert([1,2,3,4,5].find(e => e===kind), `ERROR: CommandBP: kindが不正:${kind}`)
 
             if ( kind===1 ) { ret[HPGL2_OPT_PICTURE_NAME] = value }
             else if ( kind===2 ) { ret[HPGL2_OPT_NUMBER_OF_COPIES] = value }
@@ -49,4 +49,4 @@ class OneCommandBP extends OneCommandBase {
 
 }
 
-module.exports = OneCommandBP
+module.exports = CommandBP

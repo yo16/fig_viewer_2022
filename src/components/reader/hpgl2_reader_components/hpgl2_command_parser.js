@@ -1,5 +1,5 @@
 'use strict'
-/* HPGL2"１"コマンドパーサー関数
+/* HPGL2コマンドパーサー関数
     文字列の先頭から、１コマンド分を解釈して返す
 */
 const hpgl2_commands = require('./commands')
@@ -7,7 +7,7 @@ const hpgl2_commands = require('./commands')
 const re_command = new RegExp('([A-Za-z]{2})([^A-Za-z]*)')
 
 
-const Hpgl2OneCommandParser = function(hpgl2_params){
+const Hpgl2CommandParser = function(hpgl2_params){
     const cur = hpgl2_params.current_cursor
     let cur_skip_bytes = 2
 
@@ -54,4 +54,4 @@ const Hpgl2OneCommandParser = function(hpgl2_params){
     }
 }
 
-module.exports = Hpgl2OneCommandParser
+module.exports = Hpgl2CommandParser
