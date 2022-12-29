@@ -1,7 +1,7 @@
 /* HPGL2 reader
 */
 const BasicReader = require('./basic_reader')
-const YnfDoc = require('../core/ynf_doc');
+const core = require('../core');
 const hpgl2_one_command_parser = require('./hpgl2_reader_components/hpgl2_one_command_parser')
 
 /* HPGL2読み込みクラス
@@ -40,7 +40,7 @@ class Hpgl2Reader extends BasicReader {
         // console.log(hpgl2_text);
 
         // 戻り値のDoc
-        let doc = new YnfDoc();
+        let doc = new core.YnfDoc();
         
         // オブジェクトにしておく（関数への引き渡しを参照渡しにしたいため）
         let hpgl2_param = {
@@ -48,7 +48,7 @@ class Hpgl2Reader extends BasicReader {
             current_cursor: 0,
             current_option: {},
         }
-        /*
+        
         // １コマンドごとに解釈して、docを作成する
         while ( hpgl2_param.current_cursor < hpgl2_text.length ) {
             // parse
@@ -57,14 +57,12 @@ class Hpgl2Reader extends BasicReader {
             // 次のコマンドの開始位置を設定
             hpgl2_param.current_cursor += ret.skip_bytes;
             // Docに追加
-            hpgl2_param.add_elements.forEach( elm => {
+            ret.added_elements.forEach( elm => {
                 doc.add_element(elm);   // deep copyじゃなくていいのか疑問.トラブルが起こるかも(★)
             });
             // optionを変更
             // to be implement ! (if necessary !)
         }
-        */
-
 
         return doc;
     }
