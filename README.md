@@ -31,9 +31,24 @@ A viewer for almost HPGL file for now.
 - [Node.js – exportsとmodule.exportsで関数を公開する – KeruuWeb](https://keruuweb.com/node-js-exports%E3%81%A8module-exports%E3%81%A7%E9%96%A2%E6%95%B0%E3%82%92%E5%85%AC%E9%96%8B%E3%81%99%E3%82%8B/)
   - exports、module.exportsの話
 
+- [node.jsでファイルの入出力操作 - Qiita](https://qiita.com/shirokuman/items/509b159bf4b8dd1c41ef)
+  - ファイルを読む
+    ```
+    const fs = require('fs');
+    let text = fs.readFileSync("sample.txt");
+    console.log(text);
+    ```
 
 - [Assert | Node.js v19.3.0 Documentation](https://nodejs.org/api/assert.html)
   - Assertの公式ドキュメント
+
+
+## JavaScript
+
+- [JavaScript/Node.jsでのバイナリデータ処理 - Qiita](https://qiita.com/Yuki_Oshima/items/6346231d93ca342899f0)
+  - バイナリファイルを読んだ後の変数の型は、Node.jsの場合は`Buffer`、ブラウザの場合は`ArrayBuffer`になっている。
+    - [Buffer | Node.js v19.3.0 Documentation](https://nodejs.org/api/buffer.html)
+    - [ArrayBuffer - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 
 
 ## テスト方法

@@ -1,10 +1,9 @@
 
-const ynf_element_base_main = require('./elements/ynf_element_base')
-const ynf_element_line_main = require('./elements/ynf_element_line')
+const test_ynf_element = require('./elements')
 
-const basic_reader_main = require('./reader/basic_reader')
+const test_reader = require('./reader')
 
-const writer_basic_main = require('./writer/basic_writer')
+const test_writer = require('./writer')
 
 if (require.main === module){
     main()
@@ -12,13 +11,14 @@ if (require.main === module){
 
 async function main(){
     // elements
-    ynf_element_base_main()
-    ynf_element_line_main()
+    test_ynf_element.ynf_element_base_main()
+    test_ynf_element.ynf_element_line_main()
 
     // reader
-    basic_reader_main()
+    test_reader.basic_reader_main()
+    test_reader.hpgl2_reader_main()
 
     // writer
-    writer_basic_main()
+    test_writer.basic_writer_main()
 }
 

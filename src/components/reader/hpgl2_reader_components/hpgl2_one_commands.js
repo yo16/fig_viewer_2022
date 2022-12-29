@@ -1,0 +1,8 @@
+
+class OneCommandBase {
+    constructor(options){
+
+    }
+
+    
+}
