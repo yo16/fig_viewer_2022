@@ -21,21 +21,37 @@ const Hpgl2OneCommandParser = function(hpgl2_params){
     cur_skip_bytes += cur_command_param.length
 
     // コマンドに処理を渡す
+    let added_elements = []
+    let changed_options = {}
     if ( Object.keys(hpgl2_commands).some(x => x===cur_command) ) {
-        // コマンドを生成
-        let cmd = new hpgl2_commands[cur_command]
+        try {
+            // コマンドを生成
+            let cmd = new hpgl2_commands[cur_command]({
+                hpgl2_option: hpgl2_params.current_option,
+                command_param: cur_command_param,
+            })
+            // オプションの変更点を得る
+            changed_options = cmd.parse_options()
 
+        } catch (err) {
+            // 何かのエラー
+            console.info(`ERROR: HPGL2 Parse:${err}`)
+            console.log(`  command  : ${cur_command}`)
+            console.log(`  parameter: ${cur_command_param}`)
+            console.error(err)
+            throw Error()
+        }
     } else {
         const msg = `WARN: HPGL2: Unknown command! [${cur_command}]`
-        console.log(msg);
+        console.log(msg)
         //throw Error(msg);
     }
 
     return {
         skip_bytes: cur_skip_bytes,
-        added_elements: [],
-        change_options: {},
+        added_elements: added_elements,
+        change_options: changed_options,
     }
 }
 
-module.exports = Hpgl2OneCommandParser;
+module.exports = Hpgl2OneCommandParser

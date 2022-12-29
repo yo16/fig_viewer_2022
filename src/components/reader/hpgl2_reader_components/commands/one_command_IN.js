@@ -4,9 +4,9 @@
 
 const OneCommandBase = require('./one_command_base')
 
-class OneCommandIN {
+class OneCommandIN extends OneCommandBase{
     constructor(options){
-
+        super(options)
     }
     
 }

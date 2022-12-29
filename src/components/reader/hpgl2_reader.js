@@ -51,17 +51,21 @@ class Hpgl2Reader extends BasicReader {
         
         // １コマンドごとに解釈して、docを作成する
         while ( hpgl2_param.current_cursor < hpgl2_text.length ) {
-            // parse
+            // コマンドを解釈
             let ret = hpgl2_one_command_parser( hpgl2_param );
 
-            // 次のコマンドの開始位置を設定
-            hpgl2_param.current_cursor += ret.skip_bytes;
             // Docに追加
             ret.added_elements.forEach( elm => {
                 doc.add_element(elm);   // deep copyじゃなくていいのか疑問.トラブルが起こるかも(★)
             });
             // optionを変更
-            // to be implement ! (if necessary !)
+            hpgl2_param.current_option = {
+                ...hpgl2_param.current_option,
+                ...ret.change_options,
+            }
+
+            // 次のコマンドの開始位置を設定
+            hpgl2_param.current_cursor += ret.skip_bytes;
         }
 
         return doc;
