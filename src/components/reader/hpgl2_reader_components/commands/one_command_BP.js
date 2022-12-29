@@ -3,12 +3,7 @@
 */
 require('date-utils')
 const OneCommandBase = require('./one_command_base')
-
-const HPGL2_OPT_PICTURE_NAME = 'picture_name'
-const HPGL2_OPT_NUMBER_OF_COPIES = 'number_of_copies'
-const HPGL2_OPT_FILE_DISPOSITION_CODE = 'file_disposition_code'
-const HPGL2_OPT_RENDER_LAST_PLOT = 'render_last_plot'
-const HPGL2_OPT_AUTOROTATION = 'autorotation'
+const const_value = require('./const')
 
 class OneCommandBP extends OneCommandBase {
     constructor(options){
@@ -19,11 +14,11 @@ class OneCommandBP extends OneCommandBase {
     parse_options(options) {
         const date = new Date();
         let ret = {
-            [HPGL2_OPT_PICTURE_NAME]: date.toFormat('YYYYMMDDHH24MISS'),
-            [HPGL2_OPT_NUMBER_OF_COPIES]: 1,
-            [HPGL2_OPT_FILE_DISPOSITION_CODE]: 0,
-            [HPGL2_OPT_RENDER_LAST_PLOT]: 0,
-            [HPGL2_OPT_AUTOROTATION]: 0,
+            [const_value.HPGL2_OPT_PICTURE_NAME]: date.toFormat('YYYYMMDDHH24MISS'),
+            [const_value.HPGL2_OPT_NUMBER_OF_COPIES]: 1,
+            [const_value.HPGL2_OPT_FILE_DISPOSITION_CODE]: 0,
+            [const_value.HPGL2_OPT_RENDER_LAST_PLOT]: 0,
+            [const_value.HPGL2_OPT_AUTOROTATION]: 0,
         }
 
         if ( this.command_param.length===0 ) { return ret }
