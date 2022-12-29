@@ -2,7 +2,6 @@
 /* HPGL2"１"コマンドパーサー関数
     文字列の先頭から、１コマンド分を解釈して返す
 */
-const core = require('../../core')
 const hpgl2_commands = require('./commands')
 
 const re_command = new RegExp('([A-Za-z]{2})([^A-Za-z]*)')
@@ -25,9 +24,9 @@ const Hpgl2OneCommandParser = function(hpgl2_params){
     if ( Object.keys(hpgl2_commands).some(x => x===cur_command) ) {
         // コマンドを生成
         let cmd = new hpgl2_commands[cur_command]
-        
+
     } else {
-        const msg = `HPGL2:Unknown command! [${cur_command}]`
+        const msg = `WARN: HPGL2: Unknown command! [${cur_command}]`
         console.log(msg);
         //throw Error(msg);
     }
