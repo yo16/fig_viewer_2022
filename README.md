@@ -51,6 +51,12 @@ A viewer for almost HPGL file for now.
     - [ArrayBuffer - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 
 
+## HPGL2
+- [The HP-GL-2 and HP RTL Reference Guide (draft 2)](http://www.hpmuseum.net/document.php?catfile=213)（英語, pdf）
+- [HP-GL/2ユーザーズガイド](https://cweb.canon.jp/manual/lasershot/pdf/crhix-hpgl2.pdf)（日本語）
+- [HP-GL Reference Guide](https://www.isoplotec.co.jp/HPGL/jHPGL.htm)（日本語）
+- [HP-GL - Wikipedia](https://en.wikipedia.org/wiki/HP-GL)（英語）
+
 ## テスト方法
 - [Node.jsで標準ライブラリだけを使って単体テストを行う方法【動画版あり】](https://zenn.dev/tatsuyasusukida/articles/nodejs-test-unit)
 
