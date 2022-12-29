@@ -10,6 +10,7 @@ class OneCommandBase {
 
     constructor(options) {
         //console.log(this.constructor.name)
+        //console.log(options.command_param)
         this.original_hpgl2_option = { ...options.hpgl2_option }
         this.command_param = options.command_param
     }

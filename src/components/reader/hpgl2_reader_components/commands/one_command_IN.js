@@ -1,5 +1,5 @@
 'use strict'
-/* HPGL2コマンド IN
+/* HPGL2コマンド IN, Initialize
 */
 
 const OneCommandBase = require('./one_command_base')
